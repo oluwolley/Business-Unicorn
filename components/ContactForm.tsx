@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/Button";
+import { siteConfig } from "@/lib/site";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -20,10 +21,18 @@ export function ContactForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
     const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const message = String(data.get("message") ?? "");
 
+    // No Formspree yet: fall back to the visitor's email client.
     if (!endpoint) {
+      const subject = encodeURIComponent(`Website enquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      );
+      window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
       setStatus("success");
-      form.reset();
       return;
     }
 
@@ -102,7 +111,9 @@ export function ContactForm() {
 
       {status === "success" ? (
         <p className="text-sm font-medium text-brand-teal-dark">
-          Thanks! Your message is on its way. I will get back to you soon.
+          {process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT
+            ? "Thanks! Your message is on its way. I will get back to you soon."
+            : "Opening your email app with the message ready to send."}
         </p>
       ) : null}
       {status === "error" ? (

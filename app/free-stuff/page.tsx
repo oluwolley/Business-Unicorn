@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
+import { isConfiguredUrl } from "@/lib/links";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -26,14 +27,27 @@ const resources = [
     external: true,
     primary: false,
   },
-  {
-    title: "Facebook community",
-    body: "Ask questions, share wins, and get unstuck with other Ontraport users.",
-    cta: "Join the group",
-    href: siteConfig.links.community,
-    external: true,
-    primary: false,
-  },
+  ...(isConfiguredUrl(siteConfig.links.community)
+    ? [
+        {
+          title: "Facebook community",
+          body: "Ask questions, share wins, and get unstuck with other Ontraport users.",
+          cta: "Join the group",
+          href: siteConfig.links.community,
+          external: true,
+          primary: false,
+        },
+      ]
+    : [
+        {
+          title: "Ask a question",
+          body: "Not sure where to start? Send Tallie a message and get pointed in the right direction.",
+          cta: "Contact Tallie",
+          href: "/contact",
+          external: false,
+          primary: false,
+        },
+      ]),
 ];
 
 export default function FreeStuffPage() {

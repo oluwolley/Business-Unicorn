@@ -8,12 +8,13 @@ export const siteConfig = {
   email: "hello@thebusinessunicorn.co.uk",
   links: {
     freeCourse: "https://thebusinessunicorn.co.uk/unleash-your-inner-unicorn",
-    community: "https://www.facebook.com/groups/",
+    // Leave blank until you have the real group/profile URLs.
+    community: "",
     ontraportTrial: "https://ontraport.com/",
     coursesAccess: "https://thebusinessunicorn.co.uk/",
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    linkedin: "https://www.linkedin.com/",
+    facebook: "",
+    instagram: "",
+    linkedin: "",
   },
 } as const;
 
