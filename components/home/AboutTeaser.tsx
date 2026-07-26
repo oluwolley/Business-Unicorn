@@ -1,13 +1,12 @@
 import { ButtonLink } from "@/components/Button";
-import { Portrait } from "@/components/Portrait";
 import { Section } from "@/components/Section";
 import { siteConfig } from "@/lib/site";
 
 export function AboutTeaser() {
   return (
     <Section className="!py-0">
-      <div className="overflow-hidden rounded-[2rem] bg-brand-pink px-6 py-10 text-ink md:grid md:grid-cols-[1.15fr_0.85fr] md:items-center md:gap-12 md:px-12 md:py-14">
-        <div>
+      <div className="overflow-hidden rounded-[2rem] bg-brand-pink px-6 py-10 text-ink md:px-12 md:py-14">
+        <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/70">
             Meet {siteConfig.founder}
           </p>
@@ -25,9 +24,6 @@ export function AboutTeaser() {
               More about Tallie
             </ButtonLink>
           </div>
-        </div>
-        <div className="mt-10 md:mt-0">
-          <Portrait size="sm" tone="onPink" />
         </div>
       </div>
     </Section>
