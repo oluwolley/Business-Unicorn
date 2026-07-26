@@ -16,7 +16,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Contact"
             title="Let’s untangle your Ontraport setup"
-            description="Share where you are stuck — foundations, campaigns, segmentation, or training — and I will get back to you."
+            description="Share where you are stuck with foundations, campaigns, segmentation, or training, and I will get back to you."
           />
           <div className="mt-8 space-y-3 text-sm text-ink-muted">
             <p>

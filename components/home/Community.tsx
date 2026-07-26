@@ -6,13 +6,10 @@ export function Community() {
   return (
     <Section>
       <div className="grid items-center gap-10 md:grid-cols-2">
-        <div className="relative min-h-[280px] overflow-hidden rounded-[2rem] bg-ink">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/50 via-ink to-brand-pink/40" />
-          <div className="absolute inset-0 flex items-end p-8">
-            <p className="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Community
-            </p>
-          </div>
+        <div className="relative flex min-h-[280px] items-end overflow-hidden rounded-[2rem] bg-brand-teal px-8 py-8">
+          <p className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
+            Community
+          </p>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-pink">

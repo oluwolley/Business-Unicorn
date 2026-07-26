@@ -1,6 +1,6 @@
 # The Business Unicorn
 
-Modern multi-page website for The Business Unicorn — Ontraport email marketing automation, training, and free resources.
+Modern multi-page website for The Business Unicorn: Ontraport email marketing automation, training, and free resources.
 
 ## Stack
 
@@ -24,7 +24,7 @@ Set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` in `.env.local` (see `.env.example`). Witho
 
 ## Scripts
 
-- `npm run dev` — development server
-- `npm run build` — production build
-- `npm run start` — start production server
-- `npm run lint` — ESLint
+- `npm run dev`: development server
+- `npm run build`: production build
+- `npm run start`: start production server
+- `npm run lint`: ESLint

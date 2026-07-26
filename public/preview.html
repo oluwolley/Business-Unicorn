@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Business Unicorn | Preview</title>
+    <style>
+      :root {
+        --brand-teal: #67c8cb;
+        --brand-teal-dark: #4fb4b8;
+        --brand-pink: #eb7bc9;
+        --ink: #1a1f24;
+        --ink-muted: #5c6670;
+        --surface: #ffffff;
+        --line: #e2ebed;
+        --font-display: Georgia, "Times New Roman", serif;
+        --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--ink);
+        background: var(--surface);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 4.5rem;
+        padding: 0 1.25rem;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+      }
+      header img {
+        height: 2.25rem;
+        width: auto;
+      }
+      nav {
+        display: none;
+        gap: 1.25rem;
+        font-size: 0.95rem;
+        color: var(--ink-muted);
+      }
+      @media (min-width: 768px) {
+        header {
+          padding: 0 2rem;
+        }
+        nav {
+          display: flex;
+        }
+      }
+      .hero {
+        display: grid;
+        gap: 2.5rem;
+        align-items: center;
+        max-width: 72rem;
+        min-height: calc(100svh - 4.5rem);
+        margin: 0 auto;
+        padding: 3rem 1.25rem;
+      }
+      @media (min-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr 1.05fr;
+          gap: 2rem;
+          padding: 4rem 2rem;
+        }
+      }
+      .brand {
+        margin: 0 0 1.25rem;
+        font-family: var(--font-display);
+        font-size: clamp(2.25rem, 5vw, 3.75rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+      h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        max-width: 18ch;
+      }
+      .lede {
+        margin: 1.25rem 0 0;
+        max-width: 32rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--ink-muted);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .btn-primary {
+        background: var(--brand-teal);
+        color: #083b3d;
+      }
+      .btn-secondary {
+        background: var(--brand-pink);
+        color: #4a1038;
+      }
+      .hero-media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 24px 40px rgba(26, 31, 36, 0.14));
+      }
+      .note {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 0 1.25rem 3rem;
+        color: var(--ink-muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      @media (min-width: 768px) {
+        .note {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/preview.html"
+        ><img src="/images/logo.png" alt="The Business Unicorn"
+      /></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#course">Free Stuff</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div>
+        <p class="brand">The Business Unicorn</p>
+        <h1>Automate & elevate your email marketing with Ontraport</h1>
+        <p class="lede">
+          Ontraport that finally makes sense. Automations that warm your leads
+          while you run your business.
+        </p>
+        <div class="actions">
+          <a
+            class="btn btn-primary"
+            href="https://thebusinessunicorn.co.uk/unleash-your-inner-unicorn"
+            target="_blank"
+            rel="noreferrer"
+            >Get the free course</a
+          >
+          <a class="btn btn-secondary" href="#contact">Work with Tallie</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img
+          src="/images/hero-imac.png"
+          alt="Ontraport shown on an iMac display"
+          width="1357"
+          height="1302"
+        />
+      </div>
+    </main>
+
+    <p class="note" id="about">
+      Static preview (no Next.js). Local Next is hanging on compile on this
+      machine, so this file lets you review the hero while we fix or deploy the
+      full app.
+    </p>
+    <p class="note" id="course">
+      Free course CTA points at the live Ontraport offer. Full pages (About,
+      Blog, Contact form) need the Next app or a Vercel deploy.
+    </p>
+    <p class="note" id="contact">
+      Contact: hello@thebusinessunicorn.co.uk
+    </p>
+  </body>
+</html>

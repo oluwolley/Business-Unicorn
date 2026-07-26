@@ -3,7 +3,7 @@ export const siteConfig = {
   founder: "Tallie",
   tagline: "Automate & elevate your email marketing with Ontraport",
   description:
-    "Certified Ontraport Expert helping business owners build confident, converting email automations — without the overwhelm.",
+    "Certified Ontraport Expert helping business owners build confident, converting email automations without the overwhelm.",
   url: "https://thebusinessunicorn.co.uk",
   email: "hello@thebusinessunicorn.co.uk",
   links: {
@@ -34,7 +34,7 @@ export const culprits = [
   {
     number: "02",
     title: "Features you are not fully using",
-    body: "You are paying for powerful tools but are unsure what is possible — so automations stay basic and results stay average.",
+    body: "You are paying for powerful tools but are unsure what is possible, so automations stay basic and results stay average.",
   },
   {
     number: "03",

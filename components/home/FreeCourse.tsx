@@ -9,14 +9,14 @@ export function FreeCourse() {
         <SectionHeading
           eyebrow="Free course"
           title="Unleash your inner unicorn"
-          description="Whether you are starting fresh with Ontraport or rebuilding a stuck setup, this free course walks you through campaigns, integrations, and automation — without the usual pitfalls."
+          description="Whether you are starting fresh with Ontraport or rebuilding a stuck setup, this free course walks you through campaigns, integrations, and automation without the usual pitfalls."
         />
         <div className="rounded-3xl border border-line bg-surface-elevated p-6 md:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-teal">
             Student note
           </p>
           <blockquote className="mt-4 font-display text-xl leading-snug text-ink md:text-2xl">
-            “I devoted countless hours to Ontraport support videos — this free
+            “I devoted countless hours to Ontraport support videos, but this free
             course surpassed them all. A wise investment of my time.”
           </blockquote>
           <p className="mt-4 text-sm font-medium text-ink-muted">Dana Shute</p>

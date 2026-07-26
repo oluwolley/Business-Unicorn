@@ -5,7 +5,7 @@ import { Section, SectionHeading } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Training",
   description:
-    "Overwhelmed to Enlightened — expert Ontraport training to save time, make money, and reduce stress.",
+    "Overwhelmed to Enlightened: expert Ontraport training to save time, make money, and reduce stress.",
 };
 
 const outcomes = [
@@ -54,14 +54,14 @@ export default function TrainingPage() {
       </Section>
 
       <Section>
-        <div className="rounded-[2rem] bg-gradient-to-br from-brand-teal/20 via-surface-elevated to-brand-pink/20 px-6 py-12 md:px-12">
+        <div className="rounded-[2rem] border border-line bg-surface-elevated px-6 py-12 md:px-12">
           <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
             Your email and automation success story starts with the right
             support
           </h2>
           <p className="mt-4 max-w-xl text-base text-ink-muted md:text-lg">
             Tell me where you are in your Ontraport journey and we will find the
-            right next step — from free learning to deeper 1:1 guidance.
+            right next step, from free learning to deeper 1:1 guidance.
           </p>
           <div className="mt-8">
             <ButtonLink href="/contact" size="lg">

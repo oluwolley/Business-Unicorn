@@ -10,7 +10,7 @@ export function FinalCta() {
           Ready when you are
         </p>
         <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">
-          From overwhelmed to enlightened — starting with one clear next step
+          From overwhelmed to enlightened, starting with one clear next step
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base text-white/70 md:text-lg">
           Take the free course, join the community, or book time with Tallie to

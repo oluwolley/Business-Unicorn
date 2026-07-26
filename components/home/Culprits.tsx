@@ -7,7 +7,7 @@ export function Culprits() {
       <SectionHeading
         eyebrow="The quiet blockers"
         title="Three things holding back your Ontraport results"
-        description="Whether you are already in Ontraport or joining the family, these are the patterns I see again and again — and the ones we clear first."
+        description="Whether you are already in Ontraport or joining the family, these are the patterns I see again and again, and the ones we clear first."
       />
       <ol className="mt-12 space-y-8 md:mt-16">
         {culprits.map((item) => (

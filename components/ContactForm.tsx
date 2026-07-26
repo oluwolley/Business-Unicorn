@@ -92,7 +92,7 @@ export function ContactForm() {
           required
           rows={5}
           className={`${fieldClassName} resize-y`}
-          placeholder="Tell me where you are stuck — setups, campaigns, segmentation, or something else."
+          placeholder="Tell me where you are stuck: setups, campaigns, segmentation, or something else."
         />
       </Field>
 
@@ -102,7 +102,7 @@ export function ContactForm() {
 
       {status === "success" ? (
         <p className="text-sm font-medium text-brand-teal-dark">
-          Thanks — your message is on its way. I will get back to you soon.
+          Thanks! Your message is on its way. I will get back to you soon.
         </p>
       ) : null}
       {status === "error" ? (

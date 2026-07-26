@@ -1,88 +1,127 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ButtonLink } from "@/components/Button";
-import { Section, SectionHeading } from "@/components/Section";
-import { siteConfig } from "@/lib/site";
+import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
   title: "About Tallie",
   description:
-    "Meet Tallie, Certified Ontraport Expert and founder of The Business Unicorn.",
+    "Meet Tallie, The Business Unicorn. Ontraport specialist, automation puzzle-solver, and business BFF for small business owners.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <Section reveal={false} className="pt-16 md:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
             <p className="animate-rise text-xs font-semibold uppercase tracking-[0.18em] text-brand-pink">
               About
             </p>
             <h1 className="animate-rise-delay-1 mt-3 font-display text-4xl font-semibold tracking-tight text-ink text-balance md:text-5xl">
-              Hi, I&apos;m {siteConfig.founder} — The Business Unicorn
+              Well hey there!
             </h1>
-            <p className="animate-rise-delay-2 mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
-              I am a Certified Ontraport Expert helping business owners feel
-              confident and empowered with the software they already pay for.
-            </p>
+            <div className="animate-rise-delay-2 mt-6 max-w-xl space-y-4 text-base leading-relaxed text-ink-muted md:text-lg">
+              <p>
+                I&apos;m Tallie, your business BFF with a knack for turning
+                messy tech into systems that actually save you time every week.
+              </p>
+              <p>
+                I help small business owners and solo operators with the stuff
+                that usually slows them down: funnels, landing pages, and the
+                automations that stitch it all together.
+              </p>
+              <p>
+                If you need someone who can set it up cleanly and explain it in
+                plain English, you&apos;re in the right place.
+              </p>
+            </div>
           </div>
-          <div className="animate-rise-delay-2 relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-teal/30 to-brand-pink/30 blur-xl" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-ink">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/50 via-ink to-brand-pink/40" />
-              <div className="absolute inset-0 flex items-end p-8">
-                <div>
-                  <p className="font-display text-3xl font-semibold text-white">
-                    {siteConfig.founder}
-                  </p>
-                  <p className="mt-1 text-sm text-white/70">
-                    Certified Ontraport Expert
-                  </p>
-                </div>
-              </div>
+
+          <div className="animate-rise-delay-2 mx-auto w-full max-w-xs sm:max-w-sm">
+            <div className="relative mx-auto aspect-square overflow-hidden rounded-full bg-brand-teal/10">
+              <Image
+                src="/images/tallie.jpg"
+                alt="Tallie, The Business Unicorn"
+                fill
+                className="object-cover object-[center_20%] scale-110"
+                sizes="(max-width: 768px) 80vw, 360px"
+                priority
+              />
             </div>
           </div>
         </div>
       </Section>
 
       <Section>
-        <SectionHeading
-          eyebrow="The mission"
-          title="From confusion to clear, converting automations"
-          description="Over the years I have helped countless businesses with Ontraport accounts, integrations, and automations. What I keep discovering: most people are not failing at marketing — they are missing foundations, underusing features, and drowning in messy lists."
-        />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Clarity first",
-              body: "We map what you already have, what is broken, and what actually moves the needle.",
-            },
-            {
-              title: "Own your system",
-              body: "You leave more confident managing your own Ontraport account — and your admin budget.",
-            },
-            {
-              title: "Results that feel calm",
-              body: "Better segmentation, cleaner journeys, and emails your audience actually wants to read.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="border-t border-line pt-6">
-              <h2 className="font-display text-xl font-semibold text-ink">
-                {item.title}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                {item.body}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            What I see when I look at automations
+          </h2>
+          <p className="mt-3 text-lg font-medium text-brand-teal-dark">
+            A puzzle I can&apos;t wait to solve.
+          </p>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-muted md:text-lg">
+            <p>
+              Sometimes you have to think a little outside the box to turn an
+              automation idea into something that works in real life. I&apos;m
+              the person who considers the what-ifs, buts, and maybes so your
+              customer journey stays tight.
+            </p>
+            <p>
+              No lost leads on my watch. Those could be your future superstar
+              clients.
+            </p>
+            <p>
+              I&apos;ve been working in Ontraport and other systems for over a
+              decade, so I know how automation can transform a business when
+              it&apos;s done properly. And I&apos;m genuinely excited to share
+              that with you.
+            </p>
+          </div>
         </div>
-        <div className="mt-12 flex flex-wrap gap-3">
-          <ButtonLink href="/contact" size="lg">
-            Work with Tallie
-          </ButtonLink>
-          <ButtonLink href="/free-stuff" variant="secondary" size="lg">
-            Explore free resources
-          </ButtonLink>
+      </Section>
+
+      <Section>
+        <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            Why I&apos;m The Business Unicorn
+          </h2>
+          <div className="space-y-4 text-base leading-relaxed text-ink-muted md:text-lg">
+            <p>
+              You might be wondering about the name. Honestly? I love a bit of
+              magic and myth in my branding, and people like me are a rare find
+              on a digital team: someone who lives for automation and still
+              brings design and marketing skills to the mix.
+            </p>
+            <p>
+              Outside of work, I&apos;m a certified PADI Mermaid (yes, really),
+              and I live in Kent with my husband and our husky, Nymerah. When
+              I&apos;m not deep in campaigns, I&apos;m making costumes and
+              accessories for Comicon. Halloween is my favourite holiday by a
+              mile.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="rounded-[2rem] border border-line bg-surface-elevated px-6 py-12 text-center md:px-12">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            Want to know more?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-ink-muted md:text-lg">
+            Don&apos;t be shy. Ask away. I love a good chat about Ontraport,
+            automations, or where you&apos;re stuck right now.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <ButtonLink href="/contact" size="lg">
+              Get in touch
+            </ButtonLink>
+            <ButtonLink href="/free-stuff" variant="secondary" size="lg">
+              Explore free stuff
+            </ButtonLink>
+          </div>
         </div>
       </Section>
     </>

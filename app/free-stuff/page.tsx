@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const resources = [
   {
     title: "Unleash Your Inner Unicorn",
-    body: "A free Ontraport course covering campaigns, integrations, and automation basics — without the usual pitfalls.",
+    body: "A free Ontraport course covering campaigns, integrations, and automation basics without the usual pitfalls.",
     cta: "Get course access",
     href: siteConfig.links.freeCourse,
     external: true,
@@ -43,7 +43,7 @@ export default function FreeStuffPage() {
         <SectionHeading
           eyebrow="Free stuff"
           title="Tools to start strong with Ontraport"
-          description="No fluff — practical free resources so you can build confidence before you invest further."
+          description="No fluff. Just practical free resources so you can build confidence before you invest further."
         />
       </Section>
 
@@ -54,7 +54,7 @@ export default function FreeStuffPage() {
               key={item.title}
               className={`rounded-[1.75rem] border px-6 py-8 md:px-10 md:py-10 ${
                 item.primary
-                  ? "border-brand-teal/40 bg-gradient-to-br from-brand-teal/15 to-surface-elevated"
+                  ? "border-brand-teal/40 bg-brand-teal/10"
                   : "border-line bg-surface-elevated"
               }`}
             >
