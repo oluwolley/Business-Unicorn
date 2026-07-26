@@ -1,3 +1,24 @@
+@import "tailwindcss";
+
+/* Limit scanning so Tailwind does not walk all of node_modules. */
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../content/**/*.{md,mdx}";
+
+@theme inline {
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-dark: var(--brand-teal-dark);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-pink-dark: var(--brand-pink-dark);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-line: var(--line);
+  --font-display: "Fraunces Variable", Fraunces, Georgia, serif;
+  --font-sans: "Manrope Variable", Manrope, "Segoe UI", sans-serif;
+}
+
 :root {
   --brand-teal: #67c8cb;
   --brand-teal-dark: #4fb4b8;
@@ -8,59 +29,50 @@
   --surface: #ffffff;
   --surface-elevated: #ffffff;
   --line: #e2ebed;
-  --font-display: "Fraunces Variable", Fraunces, Georgia, serif;
-  --font-sans: "Manrope Variable", Manrope, "Segoe UI", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--brand-teal) 35%, white);
+  }
 }
 
-body {
-  margin: 0;
-  background: var(--surface);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  .animate-rise {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  .animate-rise-delay-1 {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+  .animate-rise-delay-2 {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+  }
 
-::selection {
-  background: color-mix(in oklab, var(--brand-teal) 35%, white);
-}
+  .reveal {
+    opacity: 1;
+  }
 
-.text-balance {
-  text-wrap: balance;
-}
-
-.animate-rise {
-  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.animate-rise-delay-1 {
-  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-}
-
-.animate-rise-delay-2 {
-  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
-}
-
-.reveal {
-  opacity: 1;
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
 }
 
 @keyframes rise {
@@ -84,84 +96,41 @@ img {
 }
 
 .article-content {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--ink-muted);
+  @apply text-base leading-relaxed text-ink-muted;
 }
 
-.article-content h2,
-.article-content h3 {
-  margin: 2.5rem 0 1rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+.article-content :is(h2, h3) {
+  @apply mt-10 mb-4 font-display font-semibold tracking-tight text-ink;
 }
 
 .article-content h2 {
-  font-size: 1.5rem;
+  @apply text-2xl;
 }
 
 .article-content h3 {
-  font-size: 1.25rem;
+  @apply text-xl;
 }
 
 .article-content p {
-  margin: 0 0 1rem;
+  @apply mb-4;
 }
 
-.article-content ul,
-.article-content ol {
-  margin: 0 0 1rem 1.25rem;
+.article-content :is(ul, ol) {
+  @apply mb-4 ml-5 space-y-2;
 }
 
 .article-content ul {
-  list-style: disc;
+  @apply list-disc;
 }
 
 .article-content ol {
-  list-style: decimal;
+  @apply list-decimal;
 }
 
 .article-content a {
-  color: var(--brand-teal-dark);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  @apply font-medium text-brand-teal-dark underline underline-offset-2;
 }
 
 .article-content strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-/* Minimal stand-ins for the most-used Tailwind utilities while PostCSS is off. */
-.bg-surface {
-  background: var(--surface);
-}
-.text-ink {
-  color: var(--ink);
-}
-.text-ink-muted {
-  color: var(--ink-muted);
-}
-.font-sans {
-  font-family: var(--font-sans);
-}
-.font-display {
-  font-family: var(--font-display);
-}
-.bg-brand-teal {
-  background: var(--brand-teal);
-}
-.bg-brand-pink {
-  background: var(--brand-pink);
-}
-.text-brand-teal,
-.text-brand-teal-dark {
-  color: var(--brand-teal-dark);
-}
-.text-brand-pink,
-.text-brand-pink-dark {
-  color: var(--brand-pink-dark);
+  @apply font-semibold text-ink;
 }
