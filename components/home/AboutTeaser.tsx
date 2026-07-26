@@ -1,11 +1,12 @@
 import { ButtonLink } from "@/components/Button";
+import { Portrait } from "@/components/Portrait";
 import { Section } from "@/components/Section";
 import { siteConfig } from "@/lib/site";
 
 export function AboutTeaser() {
   return (
     <Section className="!py-0">
-      <div className="overflow-hidden rounded-[2rem] bg-brand-pink px-6 py-10 text-ink md:grid md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-10 md:px-12 md:py-14">
+      <div className="overflow-hidden rounded-[2rem] bg-brand-pink px-6 py-10 text-ink md:grid md:grid-cols-[1.15fr_0.85fr] md:items-center md:gap-12 md:px-12 md:py-14">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/70">
             Meet {siteConfig.founder}
@@ -25,10 +26,8 @@ export function AboutTeaser() {
             </ButtonLink>
           </div>
         </div>
-        <div className="mt-10 flex justify-center md:mt-0 md:justify-end">
-          <div className="relative grid h-48 w-48 place-items-center overflow-hidden rounded-full border-4 border-white/70 bg-ink text-white shadow-xl md:h-56 md:w-56">
-            <span className="relative font-display text-5xl font-semibold">T</span>
-          </div>
+        <div className="mt-10 md:mt-0">
+          <Portrait size="sm" tone="onPink" />
         </div>
       </div>
     </Section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ButtonLink } from "@/components/Button";
+import { Portrait } from "@/components/Portrait";
 import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -38,17 +38,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="animate-rise-delay-2 mx-auto w-full max-w-xs sm:max-w-sm">
-            <div className="relative mx-auto aspect-square overflow-hidden rounded-full bg-brand-teal/10">
-              <Image
-                src="/images/tallie.jpg"
-                alt="Tallie, The Business Unicorn"
-                fill
-                className="object-cover object-[center_20%] scale-110"
-                sizes="(max-width: 768px) 80vw, 360px"
-                priority
-              />
-            </div>
+          <div className="animate-rise-delay-2 mx-auto w-full max-w-md lg:justify-self-end">
+            <Portrait priority size="lg" />
           </div>
         </div>
       </Section>
