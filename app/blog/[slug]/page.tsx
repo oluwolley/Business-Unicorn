@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { Section } from "@/components/Section";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { markdownToHtml } from "@/lib/markdown";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -28,6 +28,8 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const html = markdownToHtml(post.content);
+
   return (
     <Section reveal={false} className="pt-16 md:pt-24">
       <div className="mx-auto max-w-3xl">
@@ -51,9 +53,10 @@ export default async function BlogPostPage({ params }: Props) {
         <p className="mt-5 text-lg leading-relaxed text-ink-muted">
           {post.excerpt}
         </p>
-        <article className="article-content mt-10">
-          <MDXRemote source={post.content} />
-        </article>
+        <article
+          className="article-content mt-10"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
     </Section>
   );
